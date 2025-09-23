@@ -2,14 +2,13 @@
 
 QMK firmware with VIA enabled is the default firmware on all Grabert keyboards. VIA allows for dynamic changing of keymaps through a desktop application. VIA does not currently support all of the advanced [software features of QMK](https://docs.qmk.fm/#/feature_auto_shift), so if you are interested in using those, see the [firmware customization documentation](firmware_customization.md).
 
-For all official VIA documentation see the VIA [website](https://caniusevia.com/) and QMK's  [repository]().
+For all official VIA documentation see the VIA [website](https://caniusevia.com/) and QMK's [repository]().
 
 ## Setting up VIA for Grabert
 
 1. Download VIA from the [official website](https://caniusevia.com/) for your respective OS.
 
 2. As of right now, Grabert is not in the upstream VIA keyboards repo, therefore you also need to download the [grabert.json](https://raw.githubusercontent.com/KoBussLLC/keyboards/kobuss/src/kobuss/grabert/grabert.json) from the KoBussLLC fork. (Click the hyperlink and right-click "Save Page As..." into your computer)
-   
 3. Launch VIA through your OS
 4. Select "Import Keymap" from your OS's menu
 5. Select the `grabert.json` file from your computer that you just downloaded

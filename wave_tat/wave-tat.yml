@@ -1,19 +1,17 @@
 name: wave-tat
 channels:
-- defaults
+  - defaults
 dependencies:
-- python=3.7
-- pip
-- pip:
-  - torch==1.7.0
-  - torchvision
-  - setuptools
-  - ninja
-  - torchnet
-  - matplotlib
-  - numba
-  - numpy
-  - pillow
-  - visdom
-
-
+  - python=3.7
+  - pip
+  - pip:
+      - torch==1.7.0
+      - torchvision
+      - setuptools
+      - ninja
+      - torchnet
+      - matplotlib
+      - numba
+      - numpy
+      - pillow
+      - visdom

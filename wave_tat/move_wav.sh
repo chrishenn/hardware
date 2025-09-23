@@ -1,15 +1,11 @@
 #!/bin/bash
 
-
 shopt -s nullglob
 
+for f in $(find ~/Downloads/data/wav/ -name '*.wav'); do
 
-for f in $(find ~/Downloads/data/wav/ -name '*.wav' )
+	fname=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 20)
 
-do
-
-fname=`tr -dc A-Za-z0-9 </dev/urandom | head -c 20`
-
-mv "$f" "/home/chris/Documents/wave-tat/data/$fname.wav"
+	mv "$f" "/home/chris/Documents/wave-tat/data/$fname.wav"
 
 done

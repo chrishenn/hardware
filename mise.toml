@@ -1,0 +1,27 @@
+[tools]
+gitleaks = "latest"
+just = "latest"
+pre-commit = "latest"
+prettier = "next"
+ruff = "latest"
+bun = "latest"
+node = "latest"
+pnpm = "latest"
+eza = { version = "latest", os = ["linux"] }
+pkl = "latest"
+shfmt = "latest"
+shellcheck = "latest"
+hk = "latest"
+
+[env]
+HK_LIBGIT2 = 0
+HK_MISE = 1
+
+[hooks.enter]
+shell = "bash"
+script = """
+    mise i -q \
+    && [ -d .venv ] || uv venv --allow-existing \
+    && [ ! -z ${VIRTUAL_ENV+x} ] || source .venv/bin/activate \
+    && uv sync
+    """

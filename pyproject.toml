@@ -1,0 +1,22 @@
+[project]
+name = "hardware"
+version = "0.1.0"
+description = ""
+readme = "readme.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "detect-secrets>=1.5.0",
+    "matplotlib>=3.10.7",
+    "mypy>=1.18.2",
+    "numpy>=2.3.5",
+    "pydub>=0.25.1",
+    "scikit-learn>=1.7.2",
+]
+
+[tool.mypy]
+packages = ["wave_tat", "arduino_pwm.fit_curve"]
+exclude = ["deprecated"]
+ignore_missing_imports = true

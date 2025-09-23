@@ -458,11 +458,11 @@ void TouchSlider::debug()
 {
     const int thresh_up = 5;
     const int thresh_dn = -6;
-    
+
     float val_av = 0;
     const float alpha = 0.01;
     const float alpha_inv = 1 - alpha;
-    
+
     float diff_av = 0;
 
     while (true)
@@ -474,34 +474,34 @@ void TouchSlider::debug()
 
         val_av = alpha * new_val + alpha_inv * val_av;
         val_av = max(val_av, 0);
-        
+
         diff_av = alpha * new_diff + alpha_inv * diff_av;
         diff_av = max(diff_av, 0);
-        
+
         float diff_2 = new_diff - diff_av;
 
         Serial.print(new_val);
         Serial.print(" ");
         Serial.print(val_av);
         Serial.print(" ");
-        
+
         Serial.print(" ");
         Serial.print(new_diff);
         Serial.print(" ");
         Serial.print(diff_av);
-        
+
         Serial.print(" ");
         Serial.print(diff_2);
-        
+
         Serial.print(0);
         Serial.print(" ");
         Serial.print(100);
-        
+
         Serial.println();
-        
-        // Serial.print(" ");    
+
+        // Serial.print(" ");
         // Serial.println((new_diff > thresh_up) | (new_diff < thresh_dn) ? 50 : 0 );
-        
+
         // int show = 0;
         // if (new_diff > thresh_up) show = 10;
         // if (new_diff < thresh_dn) show = -10;

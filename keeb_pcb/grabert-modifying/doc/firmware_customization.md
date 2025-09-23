@@ -10,21 +10,24 @@ By default the bottom-right modifiers and right shift are toggle-tap keys that a
 
 ### DFU and Reset
 
-The STM32F072 series has an internal USB bootloader that is booted into from a software reset or by a hardware reset. It is much easier to use the software reset. To use the software reset, get into layer 2 with right and left modifiers and press the rotary encoder. If you change the keymap so that you can not trigger a software reset, you must take the case apart and trigger the reset in hardware. The boot pin must be pulled high while the MCU is reset. To do this on the Grabert PCB, simply use a wire and connect the boot jumper and while the boot jumper is connected, connect the reset jumper and the release the jumper. See the image in the *Debugger Programming* section for reference.
+The STM32F072 series has an internal USB bootloader that is booted into from a software reset or by a hardware reset. It is much easier to use the software reset. To use the software reset, get into layer 2 with right and left modifiers and press the rotary encoder. If you change the keymap so that you can not trigger a software reset, you must take the case apart and trigger the reset in hardware. The boot pin must be pulled high while the MCU is reset. To do this on the Grabert PCB, simply use a wire and connect the boot jumper and while the boot jumper is connected, connect the reset jumper and the release the jumper. See the image in the _Debugger Programming_ section for reference.
 
-You should see a STMicroelectronics device show up your device tree, which means that your PCB is ready to be programmed.  `STMicroelectronics STM Device in DFU Mode`
+You should see a STMicroelectronics device show up your device tree, which means that your PCB is ready to be programmed. `STMicroelectronics STM Device in DFU Mode`
 
 To program your new firmware, flash a compiled bin with `dfu-util`. The STM32F072V8 only containes 64 Kbytes of flash, so make sure to not go crazy with too many stored images for the OLED. To learn more about building the firmware see the QMK docs.
 
 Build Command
-``` sh
+
+```sh
 make kobuss/grabert:via
 ```
 
 Build and Flash Command
-``` sh
+
+```sh
 make kobuss/grabert:via:dfu-util
 ```
+
 ### Debugger Programming
 
 **This is not normally needed unless you need breakpoints or register level access**
@@ -37,6 +40,7 @@ To access the SWD pins, you must take the case apart:
 ### Extending Functionality
 
 #### LED Underlighting
+
 Pin A9 of the STM32072 is broken out on the left of the USB, along with the USB 5V rail and ground. Pin A9 is a TIM1_CH2 enabled pin and therefore could be used for dimmable single color underglow or bit banged for an RGB string. This is not officially supported but may be documented further in the future.
 
 This pin could also be used as an input in a case where you want a giant mechanical switch for some special function.
@@ -44,6 +48,7 @@ This pin could also be used as an input in a case where you want a giant mechani
 ![](pcb_breakout.png)
 
 ### Wanted QMK additions to Grabert
+
 If you are working on the firmware for Grabert and want to see what you might be able to add, the following is a list of things that we believe others could benefit from.
 
 - Implement STM32 RTC to enable programable clock to display on the OLED

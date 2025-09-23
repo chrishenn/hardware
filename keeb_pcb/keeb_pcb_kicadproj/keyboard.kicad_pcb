@@ -1159,9 +1159,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 01)
@@ -1235,9 +1235,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 11)
@@ -1311,9 +1311,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 21)
@@ -1387,9 +1387,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 31)
@@ -1463,9 +1463,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 41)
@@ -1539,9 +1539,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 51)
@@ -1615,9 +1615,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 61)
@@ -1691,9 +1691,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 71)
@@ -1767,9 +1767,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 81)
@@ -1843,9 +1843,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 91)
@@ -1919,9 +1919,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp a1)
@@ -1995,9 +1995,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp b1)
@@ -2071,9 +2071,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp c1)
@@ -2151,8 +2151,8 @@
   (pad "" np_thru_hole circle (at 11.938 -6.985) (size 3.048 3.048) (drill 3.048) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
-  
-  
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp d1)
@@ -2226,9 +2226,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp e1)
@@ -2302,9 +2302,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp f1)
@@ -2378,9 +2378,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 101)
@@ -2454,9 +2454,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 111)
@@ -2530,9 +2530,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 121)
@@ -2606,9 +2606,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 131)
@@ -2682,9 +2682,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 141)
@@ -2758,9 +2758,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 151)
@@ -2834,9 +2834,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 161)
@@ -2910,9 +2910,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 171)
@@ -2986,9 +2986,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 181)
@@ -3062,9 +3062,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 191)
@@ -3138,9 +3138,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1a1)
@@ -3214,9 +3214,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1b1)
@@ -3290,9 +3290,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1c1)
@@ -3366,9 +3366,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1d1)
@@ -3442,9 +3442,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1e1)
@@ -3518,9 +3518,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 1f1)
@@ -3594,9 +3594,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 201)
@@ -3670,9 +3670,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 211)
@@ -3746,9 +3746,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 221)
@@ -3822,9 +3822,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 231)
@@ -3898,9 +3898,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 241)
@@ -3974,9 +3974,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 251)
@@ -4050,9 +4050,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 261)
@@ -4126,9 +4126,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 271)
@@ -4202,9 +4202,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 281)
@@ -4278,9 +4278,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 291)
@@ -4358,8 +4358,8 @@
   (pad "" np_thru_hole circle (at 11.938 -6.985) (size 3.048 3.048) (drill 3.048) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
-  
-  
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2a1)
@@ -4433,9 +4433,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2b1)
@@ -4513,8 +4513,8 @@
   (pad "" np_thru_hole circle (at 11.938 -6.985) (size 3.048 3.048) (drill 3.048) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 11.938 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
-  
-  
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2c1)
@@ -4588,9 +4588,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2d1)
@@ -4664,9 +4664,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2e1)
@@ -4740,9 +4740,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 2f1)
@@ -4816,9 +4816,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 301)
@@ -4892,9 +4892,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 311)
@@ -4968,9 +4968,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 321)
@@ -5044,9 +5044,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 331)
@@ -5120,9 +5120,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 341)
@@ -5196,9 +5196,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 351)
@@ -5272,9 +5272,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 361)
@@ -5348,9 +5348,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 371)
@@ -5424,9 +5424,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 381)
@@ -5500,9 +5500,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 391)
@@ -5576,9 +5576,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3a1)
@@ -5652,9 +5652,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3b1)
@@ -5728,9 +5728,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3c1)
@@ -5804,12 +5804,12 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
+
     (pad "" np_thru_hole circle (at -49.9999 -6.985) (size 3.048 3.048) (drill 3.048) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 49.9999 -6.985) (size 3.048 3.048) (drill 3.048) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -49.9999 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 49.9999 8.255) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu *.Mask))
-  
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3d1)
@@ -5883,9 +5883,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3e1)
@@ -5959,9 +5959,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 3f1)
@@ -6035,9 +6035,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 401)
@@ -6111,9 +6111,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 411)
@@ -6187,9 +6187,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 421)
@@ -6263,9 +6263,9 @@
   (pad "" np_thru_hole circle (at -5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers *.Cu *.Mask))
 
-  
-  
-  
+
+
+
 )
 (module keyboard_parts:D_SOD123_axial (layer F.Cu) (tedit 561B6A12)
     (tstamp 431)
