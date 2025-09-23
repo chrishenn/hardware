@@ -1,0 +1,42 @@
+
+The Akko 3068B Plus board has the separate click-on bezel, and the plate is slightly larger than the standard 3068
+
+Per the generator, without padding, we get: 
+height 95.252mm
+width 304.802mm
+
+
+plate height:
+97.50 mm
+
+plate width:
+    the case interior is exactly 12-1/8", pretty much. 
+    The plate is 12-1/8" minus maybe 0.75 mm of clearance
+
+    Or 
+    between 307.975 mm 
+    and
+    307.225 mm
+
+    So 
+    Let's go for 307.20 mm
+
+
+So we take the unpadded sizes and add
+
+top:    1.12
+bottom: 1.12
+
+left:   1.2 
+right:  1.2
+
+corner radius: 1 mm
+
+
+cherry stabs
+
+
+
+
+
+

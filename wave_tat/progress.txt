@@ -1,0 +1,1 @@
+TODO: write dataloader and design model; train on .png and .wav files in /data
