@@ -4,9 +4,12 @@ import "package://github.com/jdx/hk/releases/download/v1.24.1/hk@1.24.1#/Builtin
 exclude = List("node_modules", "keeb_pcb/keebfromblank/fp-info-cache")
 
 local formatters = new Mapping<String, Step> {
-    ["ruff"] = Builtins.ruff
+    ["ruff"] = (Builtins.ruff) {
+        exclude = "*noqa*"
+    }
     ["ruff_format"] = (Builtins.ruff_format) {
         output_summary = "hide"
+        exclude = "*noqa*"
     }
     ["mypy"] = (Builtins.mypy) {
         exclude = "*noqa*"
