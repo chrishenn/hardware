@@ -376,4 +376,3 @@ void SL44x2::dumpHEX(uint8_t* values, uint16_t size) {
 	SmartCardReader::dumpHEX(values, size);
 }
 #endif
-

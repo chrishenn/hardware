@@ -1,3 +1,9 @@
 .idea/
 .venv/
 node_modules/
+*private*
+*.bin
+*build*
+public_key.h
+public_key.pem
+node_modules

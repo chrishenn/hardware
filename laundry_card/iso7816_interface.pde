@@ -247,4 +247,3 @@ void loop() {
      Serial.write('A');
   }
 }
-

@@ -1,0 +1,7 @@
+[providers.onepass]
+type = "1password"
+vault = "homelab"
+account = "my.1password.com"
+
+[secrets]
+OTA_PASS = { provider = "onepass", value = "op://homelab/ls_esp/ota_pass" }

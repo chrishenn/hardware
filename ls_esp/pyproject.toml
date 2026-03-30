@@ -1,0 +1,10 @@
+[project]
+name = "ls-esp"
+version = "0.1.0"
+description = ""
+readme = "readme.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cryptography>=46.0.6",
+    "pyserial>=3.5",
+]

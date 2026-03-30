@@ -1,5 +1,5 @@
-amends "package://github.com/jdx/hk/releases/download/v1.24.1/hk@1.24.1#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.24.1/hk@1.24.1#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v1.39.0/hk@1.39.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.39.0/hk@1.39.0#/Builtins.pkl"
 
 exclude = List("node_modules", "keeb_pcb/keebfromblank/fp-info-cache")
 
@@ -9,9 +9,6 @@ local formatters = new Mapping<String, Step> {
     }
     ["ruff_format"] = (Builtins.ruff_format) {
         output_summary = "hide"
-        exclude = "*noqa*"
-    }
-    ["mypy"] = (Builtins.mypy) {
         exclude = "*noqa*"
     }
     ["prettier"] = (Builtins.prettier) {
@@ -30,9 +27,14 @@ local formatters = new Mapping<String, Step> {
         workspace_indicator = "hk.pkl"
         fix = "mise fmt"
     }
+    ["clang"] {
+        glob = List("*.ino")
+        fix = "clang-format -i {{files}}"
+    }
 }
 
 local linters = new Mapping<String, Step> {
+    ["shellcheck"] = Builtins.shellcheck
     ["detect_private_key"] = Builtins.detect_private_key
     ["gitleaks"] {
         workspace_indicator = "hk.pkl"
@@ -43,12 +45,11 @@ local linters = new Mapping<String, Step> {
         check = "trufflehog filesystem --fail --no-update --no-verification --log-level=-1 {{files}}"
         output_summary = "hide"
     }
-    ["detect-secrets"] {
-        glob = List("*")
-        check = "detect-secrets-hook -n {{files}}"
-        batch = true
-    }
-//     ["shellcheck"] = Builtins.shellcheck
+//     ["detect-secrets"] {
+//         glob = List("*")
+//         check = "detect-secrets-hook -n {{files}}"
+//         batch = true
+//     }
 }
 
 hooks {

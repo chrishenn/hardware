@@ -1,14 +1,10 @@
-
 #ifndef TOUCHSLIDER_H
 #define TOUCHSLIDER_H
 
 #include "Arduino.h"
 
-
-class TouchSlider
-{
+class TouchSlider {
     private:
-
         int* noise;
         int* thresh;
 

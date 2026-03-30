@@ -1276,4 +1276,3 @@ void SmartCardReader::_timeOutoccured() {
     _timeOutCB();
   }
 }
-

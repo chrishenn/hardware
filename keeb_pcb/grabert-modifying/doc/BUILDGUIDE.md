@@ -1,15 +1,15 @@
 # Grabert Build Guide
 
 - [Grabert Build Guide](#grabert-build-guide)
-  - [Preparation and Layout Decisions](#preparation-and-layout-decisions)
-    - [Determining Your Layout](#determining-your-layout)
-    - [Required Components that are not supplied](#required-components-that-are-not-supplied)
-    - [Required Tools](#required-tools)
-  - [Build Instructions](#build-instructions)
-    - [PCB Testing and Setup](#pcb-testing-and-setup)
-    - [Switch Plate Assembly](#switch-plate-assembly)
-    - [Case Assembly](#case-assembly)
-  - [Errata](#errata)
+    - [Preparation and Layout Decisions](#preparation-and-layout-decisions)
+        - [Determining Your Layout](#determining-your-layout)
+        - [Required Components that are not supplied](#required-components-that-are-not-supplied)
+        - [Required Tools](#required-tools)
+    - [Build Instructions](#build-instructions)
+        - [PCB Testing and Setup](#pcb-testing-and-setup)
+        - [Switch Plate Assembly](#switch-plate-assembly)
+        - [Case Assembly](#case-assembly)
+    - [Errata](#errata)
 
 ## Preparation and Layout Decisions
 

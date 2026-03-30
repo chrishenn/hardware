@@ -1,0 +1,45 @@
+alias c := clean
+alias b := build
+alias p := push
+
+# generate initial keypair for OTA binary signing
+init:
+    python sign.py --generate-key ecdsa-p384 --out private_key.pem
+    python sign.py --extract-pubkey private_key.pem --out public_key.pem
+
+# build and sign a binary (esp32_wroom)
+build_wroom:
+    arduino-cli compile --export-binaries \
+      --fqbn esp32:esp32:esp32da:PartitionScheme=min_spiffs \
+      --build-path build \
+      ls_esp.ino
+    python sign.py --bin build/ls_esp.ino.bin --key private_key.pem --out signed.bin --hash sha512
+
+# build and sign a binary
+build:
+    arduino-cli compile --export-binaries \
+      --fqbn esp32:esp32:XIAO_ESP32S3_Plus:PartitionScheme=fatflash \
+      --build-path build \
+      ls_esp.ino
+    python sign.py --bin build/ls_esp.ino.bin --key private_key.pem --out signed.bin --hash sha512
+
+# push a signed binary over arduinoOTA
+push:
+    python espota.py -i $DEV_IP -f signed.bin -a $OTA_PASS
+
+# build + push: build, sign, and push a signed binary over arduinoOTA
+bp: build push
+
+# remove builds, bins, and generated keys
+clean:
+    rm -rf build
+    rm public_key.h
+    rm public_key.pem
+    rm private_key.pem
+    rm signed.bin
+
+# connect over bluetooth serial (note: I turned this off)
+connect:
+    - sudo killall rfcomm
+    sudo rfcomm connect /dev/rfcomm0 $DEV_MAC 1 &
+    sudo screen /dev/rfcomm0

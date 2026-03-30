@@ -1,6 +1,0 @@
-{
-  "configuration": "cpu=atmega328old",
-  "board": "arduino:avr:nano",
-  "sketch": "blink.ino",
-  "port": "COM5"
-}

@@ -34,9 +34,3 @@ corner radius: 1 mm
 
 
 cherry stabs
-
-
-
-
-
-
