@@ -6,8 +6,4 @@ arduino = "latest"
 fnox = "latest"
 
 [env]
-#DEV_IP = "192.168.1.15"
-DEV_IP = "192.168.1.25"
-
-# for serial bluetooth, which is disabled
-# DEV_MAC = "F4:2D:C9:70:90:AE"
+JUST_UNSTABLE = 1

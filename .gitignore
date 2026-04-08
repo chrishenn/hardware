@@ -7,3 +7,4 @@ node_modules/
 public_key.h
 public_key.pem
 node_modules
+*.blockly

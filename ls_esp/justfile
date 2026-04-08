@@ -1,34 +1,71 @@
 alias c := clean
 alias b := build
 alias p := push
+alias u := upload
+
+board_wroom := "esp32:esp32:esp32:PartitionScheme=min_spiffs"
+ip_wroom := "192.168.1.15"
+mac_wroom := "F4:2D:C9:70:90:AE"
+
+board_xiao := "esp32:esp32:XIAO_ESP32S3_Plus:PartitionScheme=fatflash"
+ip_xiao := "192.168.1.25"
+
+dfile := "ls_esp.ino"
+dhash := "sha512"
+dpass := env('OTA_PASS')
+dport := "/dev/ttyUSB0"
+
+board(bname) := if bname == "wroom" { board_wroom } else { board_xiao }
+ip(bname) := if bname == "wroom" { ip_wroom } else { ip_xiao }
+flag(bname) := if bname =="wroom" { 'BOARD_WROOM' } else { 'BOARD_XIAO' }
+
+# default board name. set dbname := {"wroom", "xiao"}
+dbname := "wroom"
+
+# dialout
+dialout:
+    sudo usermod -aG dialout $USER
+    echo "reboot to activate $USER in dialout group"
+
+# install arduino cli pkgs for esp32
+install:
+    arduino-cli core install esp32:esp32
+    arduino-cli lib install "Async TCP"
+    arduino-cli lib install "ESP Async WebServer"
+    arduino-cli lib install "WebSerial"
 
 # generate initial keypair for OTA binary signing
 init:
+    uv sync
     python sign.py --generate-key ecdsa-p384 --out private_key.pem
     python sign.py --extract-pubkey private_key.pem --out public_key.pem
 
-# build and sign a binary (esp32_wroom)
-build_wroom:
+# sign a binary
+sign file=dfile hash=dhash:
+    python sign.py --bin build/{{ file }}.bin --key private_key.pem --out signed.bin --hash {{ hash }}
+
+_build bname file:
     arduino-cli compile --export-binaries \
-      --fqbn esp32:esp32:esp32da:PartitionScheme=min_spiffs \
-      --build-path build \
-      ls_esp.ino
-    python sign.py --bin build/ls_esp.ino.bin --key private_key.pem --out signed.bin --hash sha512
+    --fqbn {{ board(bname) }} \
+    --build-property compiler.cpp.extra_flags='-D{{ flag(bname) }}' \
+    --build-path build \
+    {{ file }}
 
 # build and sign a binary
-build:
-    arduino-cli compile --export-binaries \
-      --fqbn esp32:esp32:XIAO_ESP32S3_Plus:PartitionScheme=fatflash \
-      --build-path build \
-      ls_esp.ino
-    python sign.py --bin build/ls_esp.ino.bin --key private_key.pem --out signed.bin --hash sha512
+build bname=dbname file=dfile hash=dhash:
+    just _build {{ bname }} {{ file }}
+    just sign {{ file }} {{ hash }}
 
 # push a signed binary over arduinoOTA
-push:
-    python espota.py -i $DEV_IP -f signed.bin -a $OTA_PASS
+push bname=dbname pass=dpass:
+    python espota.py -i {{ ip(bname) }} -f signed.bin -a {{ pass }}
 
 # build + push: build, sign, and push a signed binary over arduinoOTA
-bp: build push
+bp bname=dbname file=dfile hash=dhash pass=dpass: (build bname file hash) (push bname pass)
+
+# build and upload over usb serial
+upload bname=dbname port=dport file=dfile:
+    arduino-cli compile --upload --fqbn {{ board(bname) }} --port {{ port }} {{ file }}
 
 # remove builds, bins, and generated keys
 clean:
@@ -39,7 +76,8 @@ clean:
     rm signed.bin
 
 # connect over bluetooth serial (note: I turned this off)
-connect:
+btconnect mac=mac_wroom:
+    #!/bin/bash
     - sudo killall rfcomm
-    sudo rfcomm connect /dev/rfcomm0 $DEV_MAC 1 &
+    sudo rfcomm connect /dev/rfcomm0 {{ mac }} 1 &
     sudo screen /dev/rfcomm0

@@ -1,26 +1,44 @@
 # ls_esp: ESP32 Remote Light Switch
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/board.gif" width="1000"/>
+</p>
+
 # idea
 
 Use the existing light switch in the storage closet to turn on the storage closet light. And, use an esp32 with an
 ambient light sensor to detect that the closet light has been turned on, to also turn on supplemental LEDs in the
 storage closet.
 
-Note: I know almost nothing about electronics, so don't assume I know what I'm doing and blindly copy what's happening
-in this diagram
+Note: I know almost nothing about electronics, so don't assume that these show the right way to do things:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/schematic.png"  alt=""/>
+  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/schematic.png" width="1000"/>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/pcb.png" width="1000"/>
 </p>
 
 # status
 
-Working! This setup responds to the storage closet light being switched on, and in reponse, switches on the LEDs in
-the closet. In addition, the microcontroller ignores flipping on other lights in the house (as expected).
+The hand-soldered version is working! This setup:
 
-Critical rule: Never use ADC2 pins (GPIO0, GPIO2, GPIO4, GPIO12–15, GPIO25–27) when Wi-Fi is active. ADC2 is shared with
-the Wi-Fi radio hardware and will give garbage readings or cause conflicts. Stick to ADC1 pins (GPIO32–39) for all
-analog measurements.
+- responds to the storage closet light being switched on, in turn switching on the LEDs in the closet
+- ignores flipping on other lights in the house
+- ignores light variations from the sun
+- accepts signed firmware updates over wifi (ArduinoOTA)
+- logs sensor values over wifi (https://github.com/ayushsharma82/WebSerial)
+
+These last two points are the reason I endeavored to revisit this project over an earlier permutation.
+Triggering constants and debounce timeouts must be calibrated AFTER the device is mounted near the ceiling - making USB
+debugging extremely inconvenient.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/mockup.jpg" width="1000"/>
+</p>
+
+The perfboard version next to a 3d-printed mockup of the (admittedly amateurish) in-progress custom pcb design
 
 # todo
 
@@ -44,6 +62,14 @@ analog measurements.
 - [ ] remote value graphing
     - https://esp32io.com/tutorials/esp32-web-plotter
 - [ ] integrate this circuit onto a custom PCB
+    - ~~male barrel jack connector for switched output~~
+        - doesn't exist. Just have to mark which is which on the pcb
+    - [x] custom footprint for isolated DC-DC converter
+    - [x] replace pc817 with an SMD optoisolator
+    - [ ] reverse-current protection diodes on 24V input and load output
+    - [ ] replace tiny resistors with hand-solderable ones
+    - [ ] replace TO-220 power mosfet with an SMD
+    - [ ] add ground planes
 
 # usage
 
@@ -52,12 +78,14 @@ note: tested only linux
 ```bash
 $ just -l
 Available recipes:
-    bp      # build + push: build, sign, and push a signed binary over arduinoOTA
-    build   # build and sign a binary [alias: b]
-    clean   # remove builds, bins, and generated keys [alias: c]
-    connect # connect over bluetooth serial (note: I turned this off)
-    init    # generate initial keypair for OTA binary signing
-    push    # push a signed binary over arduinoOTA [alias: p]
+    bp bname=dbname file=dfile hash=dhash pass=dpass # build + push: build, sign, and push a signed binary over arduinoOTA
+    btconnect mac=mac_wroom                          # connect over bluetooth serial (note: I turned this off)
+    build bname=dbname file=dfile hash=dhash         # build and sign a binary [alias: b]
+    clean                                            # remove builds, bins, and generated keys [alias: c]
+    init                                             # generate initial keypair for OTA binary signing
+    push bname=dbname pass=dpass                     # push a signed binary over arduinoOTA [alias: p]
+    sign file=dfile hash=dhash                       # sign a binary
+    upload bname=dbname port=dport file=dfile        # build and upload over usb serial [alias: u]
 
 # eg
 just build
@@ -214,23 +242,6 @@ The last number of 0x1E0000 is the hex equivalent of 1966080 which means, if you
 you should be able to find the number on the end of the app0 line and convert that from hex to decimal and the compiler
 should work with that partitioning too.
 
-### fixed problem
-
-I fixed this issue by swapping the premade photoresistor module for a through-hole photoresistor with a 1K resistor, and
-measuring at the voltage division between them. I experimented with resistors until ambient light consditions in the
-target range provided readable values to the ESP32 ADC.
-
-Problem: the bottom end of the ADC on ESP32 is totally flat. Turning on the light bulb in the storage closet adds ~40 to
-~50 points to the measurement (out of 4096) - but crucially, only when there is other ambient light. When the room is
-dark, turning on the storage light does not register.
-
-I must have the house lights on in order for the storage light to register.
-Even the kitchen lights are not enough to bring the sensor into measurable range.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/esp32_adc.png"  alt=""/>
-</p>
-
 ### switch triggering algo
 
 Typically we see a clean transition, where our exponentially-smoothed function (exp_av) changes within a trigger window,
@@ -279,3 +290,28 @@ exp_av   delta  delta_2  threshold  fired
 207.2,     4.3,   232.0,    84.6,     0.0
 201.7,     5.5,     9.8,    82.9,     0.0
 ```
+
+# notes
+
+### ESP32 ADCs
+
+Critical rule: Never use ADC2 pins (GPIO0, GPIO2, GPIO4, GPIO12–15, GPIO25–27) when Wi-Fi is active. ADC2 is shared with
+the Wi-Fi radio hardware and will give garbage readings or cause conflicts. Stick to ADC1 pins (GPIO32–39) for all
+analog measurements.
+
+### ADC response
+
+I fixed this issue by swapping the premade photoresistor module for a through-hole photoresistor with a 1K resistor, and
+measuring at the voltage division between them. I experimented with resistors until ambient light consditions in the
+target range provided readable values to the ESP32 ADC.
+
+Problem: the bottom end of the ADC on ESP32 is totally flat. Turning on the light bulb in the storage closet adds ~40 to
+~50 points to the measurement (out of 4096) - but crucially, only when there is other ambient light. When the room is
+dark, turning on the storage light does not register.
+
+I must have the house lights on in order for the storage light to register.
+Even the kitchen lights are not enough to bring the sensor into measurable range.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chrishenn/hardware/refs/heads/main/ls_esp/doc/esp32_adc.png"  alt=""/>
+</p>

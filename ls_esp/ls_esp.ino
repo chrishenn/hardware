@@ -10,9 +10,11 @@
 
 #include "public_key.h"
 
-const int pin_sense = 1;
-const int pin_relay = 2;
+const int              pin_sense = 32;
+const int              pin_relay = 33;
+typedef HardwareSerial stype;
 
+// todo: pass these secrets in from env/fnox/defines
 const String wifi_ssid = "Coop_2";
 const String wifi_pass = "";
 const String ota_host  = "ls_esp32";
@@ -32,15 +34,39 @@ void setup_wdt() {
     esp_task_wdt_init(&twdt_config);
 }
 
-void setup_wifi() {
-    Serial.printf("start wifi connect\n");
+void wifi_connect() {
+    IPAddress ip(192, 168, 1, 15);
+    IPAddress gateway(192, 168, 1, 1);
+    IPAddress subnet(255, 255, 255, 0);
+
     WiFi.mode(WIFI_STA);
+    if (!WiFi.config(ip, gateway, subnet)) {
+        Serial.println("Wifi failed to configure");
+    }
+
     WiFi.begin(wifi_ssid.c_str(), wifi_pass.c_str());
     while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-        delay(1000);
-        ESP.restart();
+        delay(2000);
+        Serial.println('waiting');
     }
-    Serial.printf("IP address: %s\n", WiFi.localIP().toString());
+}
+
+void wifi_connected(WiFiEvent_t event, WiFiEventInfo_t info) {
+    Serial.printf("wifi connected with IP: %s\n", WiFi.localIP().toString());
+}
+
+void wifi_disconnected(WiFiEvent_t event, WiFiEventInfo_t info) {
+    Serial.printf("Disconnected from wifi with err: %s\n", info.wifi_sta_disconnected.reason);
+    Serial.println("start wifi reconnect");
+    wifi_connect();
+}
+
+void setup_wifi() {
+    // I've seen the connected hook fire, but not the disconnected hook
+    Serial.println("start wifi connect");
+    WiFi.onEvent(wifi_connected, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_CONNECTED);
+    WiFi.onEvent(wifi_disconnected, WiFiEvent_t::ARDUINO_EVENT_WIFI_STA_DISCONNECTED);
+    wifi_connect();
 }
 
 void setup_ota() {
@@ -73,20 +99,7 @@ void setup_ota() {
     ArduinoOTA.begin();
 }
 
-void setup_ls() {
-    // default: 12 (read value range: 0-4096). Possible resolution bit widths: {9, 10, 11, 12}
-    // analogReadResolution(12);
-
-    // default analog pin attenuation: ADC_11db. Set lower for greater sensitivity at low sensor voltages
-    // values: {ADC_0db, ADC_2_5db, ADC_6db, ADC_11db}
-    analogSetAttenuation(ADC_0db);
-
-    pinMode(pin_sense, INPUT);
-    pinMode(pin_relay, OUTPUT);
-    digitalWrite(pin_relay, LOW);
-}
-
-void prnt(HWCDC *s0, WebSerialClass *s1, float val0, float val1, float val2, float val3, float val4) {
+void prnt(stype *s0, WebSerialClass *s1, float val0, float val1, float val2, float val3, float val4) {
     s0->printf("%8.1f,%8.1f,%8.1f,%8.1f,%8.1f\n", val0, val1, val2, val3, val4);
     s1->printf("%8.1f,%8.1f,%8.1f,%8.1f,%8.1f\n", val0, val1, val2, val3, val4);
 }
@@ -98,63 +111,75 @@ void setup_webserial() {
     server.begin();
 }
 
-// void loop_ls(void *params) {
-//     setup_webserial();
-//
-//     // after trigger_window reads, we check for any change great enough to exceed the trigger threshold
-//     const int trigger_window = 5000;
-//
-//     // debounce is counted in sample-loops - same as the number of reads defined by trigger_window
-//     int       debounce_timer   = 0;
-//     const int debounce_timeout = 4 * trigger_window;
-//
-//     // an exponentially-decayed moving average is cheap, and does a reasonable job smoothing the signal
-//     const float exp_smooth     = 0.01;
-//     const float exp_smooth_inv = 1.0 - exp_smooth;
-//     float       exp_val        = 0.0;
-//     float       exp_prev       = 0.0;
-//     float       exp_delta      = 0.0;
-//
-//     // trigger_thresh is set to a fraction of the value of the smoothed light reading
-//     // when values are small, they are also noisy; hence the trigger value floor `trigger_min`
-//     const float trigger_frac   = 0.40;
-//     const float trigger_min    = 30;
-//     float       trigger_thresh = 0.0;
-//
-//     bool trigger_fired = false;
-//     bool relay_state   = false;
-//
-//     while (true) {
-//         for (int i = 0; i < trigger_window; i++) {
-//             exp_val = (exp_smooth * float(analogRead(pin_sense))) + (exp_smooth_inv * exp_val);
-//         }
-//         debounce_timer += trigger_window;
-//
-//         trigger_thresh = exp_prev * trigger_frac;
-//         trigger_thresh = _max(trigger_thresh, trigger_min);
-//
-//         exp_delta = abs(exp_val - exp_prev);
-//         exp_prev  = exp_val;
-//
-//         if ((exp_delta >= trigger_thresh) && (debounce_timer >= debounce_timeout)) {
-//             trigger_fired = true;
-//         }
-//         prnt(&Serial, &WebSerial, exp_val, exp_delta, trigger_thresh, trigger_fired * 100);
-//         WebSerial.loop();
-//
-//         if (trigger_fired) {
-//             trigger_fired  = false;
-//             debounce_timer = 0;
-//             relay_state    = !relay_state;
-//
-//             if (relay_state) {
-//                 digitalWrite(pin_relay, HIGH);
-//             } else {
-//                 digitalWrite(pin_relay, LOW);
-//             }
-//         }
-//     }
-// }
+void loop_ls(void *params) {
+    // one-shot adc reads
+    setup_webserial();
+
+    // after trigger_window reads, we check for any change great enough to exceed the trigger threshold
+    const int trigger_window = 5000;
+
+    // debounce is counted in sample-loops - same as the number of reads defined by trigger_window
+    int       debounce_timer   = 0;
+    const int debounce_timeout = 4 * trigger_window;
+
+    // an exponentially-decayed moving average is cheap, and does a reasonable job smoothing the signal
+    const float exp_smooth     = 0.01;
+    const float exp_smooth_inv = 1.0 - exp_smooth;
+    float       exp_val        = 0.0;
+    float       exp_prev       = 0.0;
+    float       exp_delta      = 0.0;
+
+    // trigger_thresh is set to a fraction of the value of the smoothed light reading
+    // when values are small, they are also noisy; hence the trigger value floor `trigger_min`
+    const float trigger_frac   = 0.40;
+    const float trigger_min    = 30;
+    float       trigger_thresh = 0.0;
+
+    bool trigger_fired = false;
+    bool relay_state   = false;
+
+    // default: 12 (read value range: 0-4096). Possible resolution bit widths: {9, 10, 11, 12}
+    // analogReadResolution(12);
+
+    // default analog pin attenuation: ADC_11db. Set lower for a lower range of readable voltages
+    // values: {ADC_0db, ADC_2_5db, ADC_6db, ADC_11db}
+    analogSetAttenuation(ADC_0db);
+
+    pinMode(pin_sense, INPUT);
+    pinMode(pin_relay, OUTPUT);
+    digitalWrite(pin_relay, LOW);
+
+    while (true) {
+        for (int i = 0; i < trigger_window; i++) {
+            exp_val = (exp_smooth * float(analogRead(pin_sense))) + (exp_smooth_inv * exp_val);
+        }
+        debounce_timer += trigger_window;
+
+        trigger_thresh = exp_prev * trigger_frac;
+        trigger_thresh = _max(trigger_thresh, trigger_min);
+
+        exp_delta = abs(exp_val - exp_prev);
+        exp_prev  = exp_val;
+
+        if ((exp_delta >= trigger_thresh) && (debounce_timer >= debounce_timeout)) {
+            trigger_fired = true;
+        }
+        prnt(&Serial, &WebSerial, exp_val, exp_delta, exp_delta, trigger_thresh, trigger_fired * 100);
+        WebSerial.loop();
+
+        if (trigger_fired) {
+            trigger_fired  = false;
+            debounce_timer = 0;
+            relay_state    = !relay_state;
+
+            if (relay_state) {
+                digitalWrite(pin_relay, HIGH);
+            } else {
+                digitalWrite(pin_relay, LOW);
+            }
+        }
+    }
+}
 
 void loop_ota(void *params) {
     // this will not work when pinned to a core
@@ -185,6 +210,7 @@ int adc_poll(adc_continuous_result_t *adc_results) {
 }
 
 void loop_ls_cont(void *params) {
+    // continuous adc reads
     setup_webserial();
 
     // after trigger_window reads, we check for any change great enough to exceed the trigger threshold
@@ -195,7 +221,7 @@ void loop_ls_cont(void *params) {
     const int debounce_timeout = 5 * trigger_window;
 
     // an exponentially-decayed moving average is cheap, and does a reasonable job smoothing the signal
-    const float exp_smooth     = 0.5;
+    const float exp_smooth     = 0.01;
     const float exp_smooth_inv = 1.0 - exp_smooth;
     float       exp_val        = 0.0;
     float       exp_prev       = 0.0;
@@ -206,8 +232,8 @@ void loop_ls_cont(void *params) {
 
     // trigger_thresh is set to a fraction of the value of the smoothed light reading
     // when values are small, they are also noisy; hence the trigger value floor `trigger_min`
-    const float trigger_frac   = 0.40;
-    const float trigger_min    = 30;
+    const float trigger_frac   = 0.50;
+    const float trigger_min    = 300;
     float       trigger_thresh = 0.0;
 
     bool trigger_fired = false;
@@ -273,14 +299,12 @@ void setup() {
     Serial.begin(115200);
 
     setup_wdt();
-    //     setup_ls();
     setup_wifi();
     setup_ota();
 
     // OTA task has lower priority
     // disable watchdog timer on idle task to use this setup - otherwise the wdt on core0's idle task will panic
     xTaskCreate(loop_ota, "loop_ota", 4096, NULL, 1, NULL);
-    //     xTaskCreate(loop_ls, "loop_ls", 4096, NULL, 2, NULL);
     xTaskCreate(loop_ls_cont, "loop_ls_cont", 4096, NULL, 2, NULL);
 }
 
