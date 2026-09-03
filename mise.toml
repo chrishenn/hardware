@@ -16,5 +16,4 @@ trufflehog = "latest"
 clang-format = "latest"
 
 [env]
-HK_LIBGIT2 = 0
 HK_MISE = 1
